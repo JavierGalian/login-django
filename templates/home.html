@@ -4,15 +4,17 @@
 
     {% if request.user.is_authenticated %}
         <nav class='navbar'>
-            <a href="{% url 'user:logout' %}">Cerrar sesión</a>
+            <ul>
+                <li><a href="{% url 'user:logout' %}">Cerrar sesión</a></li>
+            <ul>
         </nav>
         <p>Bienvenido, {{ request.user.username }}</p>
         
     {% else %}
         <nav class='navbar'>
             <ul>
-                <a href="{% url 'user:login' %}">Iniciar sesión</a>
-                <a href="{% url 'user:create_user' %}">Registrarse</a>
+                <li><a href="{% url 'user:login' %}">Iniciar sesión</a></li>
+                <li><a href="{% url 'user:create_user' %}">Registrarse</a></li>
             </ul> 
         </nav>
         
